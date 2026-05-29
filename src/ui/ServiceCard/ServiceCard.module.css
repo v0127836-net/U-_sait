@@ -1,0 +1,39 @@
+.card {
+  background: #1a1715;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: default;
+  transition: border-color 0.2s ease;
+}
+.card:hover {
+  border-color: rgba(232, 48, 78, 0.35);
+}
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.desc {
+  font-size: 0.875rem;
+  color: var(--text-2);
+  line-height: 1.65;
+}

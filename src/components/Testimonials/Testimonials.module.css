@@ -1,0 +1,116 @@
+.section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: var(--bg);
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.sub {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 360px;
+}
+
+/* ── Slider layout ── */
+.sliderWrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.swiper {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Card ── */
+.card {
+  background: #1a1715;
+  border-radius: 20px;
+  padding: clamp(3rem, 5vw, 5rem) clamp(3rem, 8vw, 9rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+.quote {
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.85;
+  color: var(--text);
+  font-style: normal;
+  max-width: 720px;
+}
+
+/* ── Author ── */
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.14);
+  margin-bottom: 0.3rem;
+}
+
+.authorName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.authorRole {
+  font-size: 0.82rem;
+  color: var(--text-2);
+}
+
+/* ── Nav buttons ── */
+.navBtn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.navBtn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.08);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .header { flex-direction: column; gap: 0.75rem; }
+  .card   { padding: 2.5rem 1.5rem; }
+  .navBtn { width: 40px; height: 40px; }
+}

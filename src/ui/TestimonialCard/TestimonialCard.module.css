@@ -1,0 +1,58 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  color: var(--accent);
+  fill: var(--accent);
+  width: 14px;
+  height: 14px;
+}
+
+.quote {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-2);
+  font-style: normal;
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-2);
+  flex-shrink: 0;
+}
+
+.author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.role {
+  font-size: 0.78rem;
+  color: var(--text-3);
+}

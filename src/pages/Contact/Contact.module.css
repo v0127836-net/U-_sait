@@ -1,0 +1,131 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Pink glow in top-right */
+.glow {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 48, 78, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: start;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+/* ── Form card ── */
+.card {
+  background: #1a1715;
+  border-radius: 20px;
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.cardTitle {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.cardSub {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+/* ── Info side ── */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  padding-top: 0.5rem;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.infoTitle {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.infoRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-2);
+  font-size: 0.9rem;
+  transition: color var(--t-fast);
+  text-decoration: none;
+}
+a.infoRow:hover { color: var(--text); }
+
+.infoIcon {
+  color: var(--text-3);
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* Socials */
+.socials {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.social {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 1rem;
+  transition: all var(--t-fast);
+}
+.social:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

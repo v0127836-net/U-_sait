@@ -1,0 +1,100 @@
+/* Header */
+.header {
+  position: relative;
+  padding-top: 68px;
+  overflow: hidden;
+  background: var(--bg);
+}
+.headerBg {
+  position: absolute; inset: 0;
+  display: flex; pointer-events: none;
+}
+.hLine { flex: 1; border-right: 1px solid var(--border); }
+.hLine:last-child { border: none; }
+
+.headerContent {
+  position: relative; z-index: 1;
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.header h1 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.headerSub {
+  font-size: 1rem; color: var(--text-2); line-height: 1.75;
+}
+
+/* Filters */
+.main { background: var(--bg-2); }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+.filterBtn {
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--r-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+.filterBtn:hover {
+  border-color: var(--border-2);
+  color: var(--text);
+}
+.filterActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-3);
+  padding: 4rem 0;
+}
+
+/* CTA */
+.cta { background: var(--bg); }
+.ctaBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: clamp(2.5rem,5vw,4.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.ctaBox::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+.ctaTitle { font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 800; letter-spacing: -0.03em; }
+.ctaSub   { font-size: 0.9rem; color: var(--text-2); margin-top: 0.5rem; }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px)  { .grid { grid-template-columns: 1fr; } .ctaBox { flex-direction: column; } }

@@ -1,0 +1,337 @@
+/* ────────────────────────────────────────
+   TRUSTED
+──────────────────────────────────────── */
+.trusted {
+  padding: 5rem 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.trustedHeading {
+  text-align: center;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 3rem;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  opacity: 0.68;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  cursor: default;
+}
+.badge:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+/* ────────────────────────────────────────
+   COMPANY / ABOUT
+──────────────────────────────────────── */
+.company {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.companyGlow {
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(232,48,78,0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.companyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 6rem);
+  align-items: center;
+}
+
+/* Left */
+.companyLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.companyHeading {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+  max-width: 420px;
+}
+
+.teamPhotoWrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.teamPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) brightness(0.85);
+  transition: filter 0.5s ease;
+}
+.teamPhotoWrap:hover .teamPhoto {
+  filter: grayscale(0%) brightness(0.95);
+}
+
+/* Pink accent bar on the left edge of photo */
+.teamAccentBar {
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Right */
+.companyRight {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.companyText {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+/* Stats 2×2 */
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 2rem;
+  padding-top: 0.5rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.statNum {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.82rem;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+
+/* ────────────────────────────────────────
+   SERVICES
+──────────────────────────────────────── */
+.servicesSection {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: var(--bg-2);
+  overflow: hidden;
+}
+
+.servicesGlow {
+  position: absolute;
+  top: 0;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232,48,78,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.servicesMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.servicesTitle {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.servicesSub {
+  max-width: 540px;
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.servicesBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+/* ────────────────────────────────────────
+   PORTFOLIO
+──────────────────────────────────────── */
+.portfolioSection {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: var(--bg);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.portfolioTitle {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.portfolioSub {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  max-width: 480px;
+}
+
+.moreLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+.moreLink:hover { color: var(--accent); }
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ────────────────────────────────────────
+   CTA
+──────────────────────────────────────── */
+.ctaSection {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.ctaGrid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+}
+.ctaGridLine {
+  flex: 1;
+  border-right: 1px solid rgba(255,255,255,0.04);
+}
+.ctaGridLine:last-child { border-right: none; }
+
+.ctaGlow {
+  position: absolute;
+  top: -30%;
+  left: -8%;
+  width: 55%;
+  height: 160%;
+  background: radial-gradient(ellipse at left center, rgba(180,30,50,0.28) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.ctaInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.ctaBtn {
+  border-radius: 10px !important;
+  flex-shrink: 0;
+}
+
+.pink { color: var(--accent); }
+
+/* ────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .companyGrid   { grid-template-columns: 1fr; gap: 3rem; }
+  .servicesGrid  { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .portfolioGrid { grid-template-columns: 1fr; }
+  .sectionHead   { flex-direction: column; align-items: flex-start; }
+  .badges        { gap: 1.25rem; }
+}
+
+@media (max-width: 640px) {
+  .servicesGrid  { grid-template-columns: 1fr; }
+  .statsGrid     { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+}

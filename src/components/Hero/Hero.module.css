@@ -1,0 +1,178 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* ── Background vertical grid lines ── */
+.grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gridLine {
+  flex: 1;
+  border-right: 1px solid rgba(255,255,255,0.04);
+  transform-origin: top;
+}
+.gridLine:last-child { border-right: none; }
+
+/* ── Right-side warm glow (matches Figma) ── */
+.glow1 {
+  position: absolute;
+  top: -5%;
+  right: -10%;
+  width: 75%;
+  height: 110%;
+  background: radial-gradient(
+    ellipse at right center,
+    rgba(180, 30, 50, 0.32) 0%,
+    rgba(140, 20, 40, 0.18) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* secondary softer glow near center-right */
+.glow2 {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232,48,78,0.12) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Content ── */
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 6vw, 6rem) var(--container-pad);
+}
+
+.headline {
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.h1 {
+  font-size: clamp(2rem, 4.2vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.pink { color: var(--accent); }
+
+.sub {
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  color: var(--text-2);
+  line-height: 1.72;
+  max-width: 460px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.heroBtn {
+  border-radius: 10px !important;
+}
+
+/* ── Social proof ── */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatars {
+  display: flex;
+}
+.ava {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  object-fit: cover;
+  margin-right: -10px;
+}
+.ava:last-child { margin-right: 0; }
+
+.socialNum {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+}
+.socialLabel {
+  font-size: 0.76rem;
+  color: var(--text-2);
+}
+
+/* ── Scroll indicator ── */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: var(--container-pad);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 1;
+}
+
+.scrollLine {
+  width: 36px;
+  height: 1px;
+  background: var(--text-3);
+  position: relative;
+  overflow: hidden;
+}
+.scrollLine::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 1px;
+  background: var(--accent);
+  animation: scrollAnim 2s ease infinite;
+}
+@keyframes scrollAnim {
+  0%   { left: -100%; }
+  100% { left: 100%;  }
+}
+
+.scrollIndicator span {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .glow1 { width: 100%; right: -20%; }
+  .social { display: none; }
+}
+
+@media (max-width: 480px) {
+  .grid { display: none; }
+  .scrollIndicator { display: none; }
+}

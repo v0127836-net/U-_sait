@@ -1,0 +1,188 @@
+/* ── Page header ── */
+.pageHeader {
+  position: relative;
+  padding-top: 68px;
+  padding-bottom: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.headerBg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+.headerLine {
+  flex: 1;
+  border-right: 1px solid var(--border);
+}
+.headerLine:last-child { border: none; }
+
+.headerContent {
+  position: relative;
+  z-index: 1;
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.pageHeader h1 {
+  font-size: clamp(2.2rem, 5.5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+}
+
+.pink { color: var(--accent); }
+
+.headerSub {
+  font-size: 1rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  max-width: 500px;
+}
+
+/* ── Accordion section ── */
+.accordionSection { background: var(--bg-2); }
+
+.accGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.accList {
+  display: flex;
+  flex-direction: column;
+}
+
+.accItem {}
+
+.accRow {
+  display: grid;
+  grid-template-columns: 3rem 1fr 2fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--t-fast);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+}
+.accRow:hover .accTitle { color: var(--accent); }
+.accRow:hover .accArrow { transform: translateX(4px); color: var(--accent); }
+
+.accNum {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.accTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  transition: color var(--t-fast);
+  white-space: nowrap;
+}
+
+.accDesc {
+  font-size: 0.82rem;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+.accArrow {
+  color: var(--text-3);
+  transition: transform var(--t-fast), color var(--t-fast);
+  display: flex;
+  align-items: center;
+}
+
+/* ── Cards ── */
+.cardsSection { background: var(--bg); }
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+/* ── FAQ ── */
+.faqSection { background: var(--bg-2); }
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* ── CTA ── */
+.cta { background: var(--bg); }
+
+.ctaBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.ctaBox::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.ctaTitle {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .accGrid  { grid-template-columns: 1fr; gap: 3rem; }
+  .faqGrid  { grid-template-columns: 1fr; gap: 3rem; }
+  .cardsGrid { grid-template-columns: repeat(2,1fr); }
+  .accRow { grid-template-columns: 3rem 1fr; }
+  .accDesc { display: none; }
+}
+
+@media (max-width: 640px) {
+  .cardsGrid { grid-template-columns: 1fr; }
+  .ctaBox { flex-direction: column; text-align: center; }
+}

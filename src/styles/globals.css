@@ -1,0 +1,115 @@
+/* ============================================
+   u! DIGITAL STUDIO — GLOBAL STYLES
+   ============================================ */
+
+:root {
+  /* Backgrounds */
+  --bg:          #0e0c0b;
+  --bg-2:        #141210;
+  --bg-card:     #1a1715;
+  --bg-card-2:   #201d1a;
+  --bg-glass:    rgba(255,255,255,0.03);
+
+  /* Borders */
+  --border:      rgba(255,255,255,0.07);
+  --border-2:    rgba(255,255,255,0.12);
+  --border-accent: rgba(232,48,78,0.45);
+
+  /* Accent */
+  --accent:      #e8304e;
+  --accent-hover:#ff3d5a;
+  --accent-dark: #c0283f;
+  --accent-glow: rgba(232,48,78,0.35);
+  --accent-glow-lg: rgba(232,48,78,0.18);
+
+  /* Text */
+  --text:        #ffffff;
+  --text-2:      rgba(255,255,255,0.55);
+  --text-3:      rgba(255,255,255,0.30);
+
+  /* Typography */
+  --font:        'Onest', sans-serif;
+
+  /* Spacing */
+  --container-max: 1280px;
+  --container-pad: clamp(1.25rem, 5vw, 4.5rem);
+  --section-y:     clamp(4rem, 9vw, 9rem);
+
+  /* Radii */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-xl: 32px;
+  --r-full: 9999px;
+
+  /* Transitions */
+  --ease:        cubic-bezier(0.16,1,0.3,1);
+  --t-fast:      0.2s ease;
+  --t-med:       0.4s var(--ease);
+  --t-slow:      0.7s var(--ease);
+
+  /* Z-index */
+  --z-header: 900;
+  --z-menu:   950;
+  --z-modal:  1000;
+}
+
+/* ====== RESET ====== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+body.no-scroll { overflow: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul, ol { list-style: none; }
+input, textarea { font-family: inherit; }
+
+/* ====== SCROLLBAR ====== */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ====== SELECTION ====== */
+::selection { background: rgba(232,48,78,0.25); color: #fff; }
+
+/* ====== TYPOGRAPHY ====== */
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+/* ====== SWIPER OVERRIDES ====== */
+.swiper-pagination-bullet {
+  background: var(--text-3) !important;
+  opacity: 1 !important;
+  width: 6px !important;
+  height: 6px !important;
+  transition: all 0.3s ease !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--accent) !important;
+  width: 24px !important;
+  border-radius: 3px !important;
+}
+
+/* ====== UTILITY ====== */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+.accent { color: var(--accent); }
+.section-py { padding-top: var(--section-y); padding-bottom: var(--section-y); }
